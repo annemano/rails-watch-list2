@@ -8,7 +8,6 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap';
-import { initSelect2 } from '../components/form';
 import { initBarRating } from '../components/starrating'
 
 Rails.start()
@@ -17,6 +16,5 @@ ActiveStorage.start()
 
 
 document.addEventListener('turbolinks:load', () => {
-  initSelect2();
   initBarRating();
 });

@@ -2,7 +2,7 @@ import 'jquery-bar-rating';
 
 const initBarRating = () => {
   $('#star').barrating({
-    theme: 'fontawesome-stars'
+    theme: 'css-stars'
   });
 };
 

@@ -1,19 +1,20 @@
-.br-theme-fontawesome-stars {
+.br-theme-css-stars {
 
   .br-widget {
     height: 28px;
     white-space: nowrap;
 
     a {
-      font: normal normal normal 20px/1 FontAwesome;
-      text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
       text-decoration: none;
-      margin-right: 2px;
+      height: 18px;
+      width: 18px;
+      float: left;
+      font-size: 23px;
+      margin-right: 5px;
     }
 
     a:after {
-      content: '\f005';
+      content: "\2605";
       color: #d2d2d2;
     }
 
@@ -39,17 +40,17 @@
 }
 
 @media print {
-  .br-theme-fontawesome-stars {
+  .br-theme-css-stars {
 
     .br-widget {
       a:after {
-        content: '\f006';
+        content: "\2606";
         color: black;
       }
 
       a.br-active:after,
       a.br-selected:after {
-        content: '\f005';
+        content: "\2605";
         color: black;
       }
     }
