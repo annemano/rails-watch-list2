@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap';
 import { initBarRating } from '../components/starrating'
+import { loadDynamicBannerText } from '../components/banner';
 
 Rails.start()
 Turbolinks.start()
@@ -17,4 +18,5 @@ ActiveStorage.start()
 
 document.addEventListener('turbolinks:load', () => {
   initBarRating();
+  loadDynamicBannerText();
 });
