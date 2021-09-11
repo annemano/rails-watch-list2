@@ -1,7 +1,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 240px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,4 +11,45 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  &.grow {
+    transition: all .1s ease-in-out;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+}
+
+.card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+.card-img-top {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-title {
+  h5 {
+  font-weight: bolder;
+  }
+  i {
+    color: $yellow;
+  }
+}
+.card-movie {
+  height: 480px;
+}
+
+.card-overview {
+  font-size: 14px;
+  text-align: justify;
+}
+
+.card-comment {
+  font-weight: lighter;
+  font-size: 14px;
 }
