@@ -16,8 +16,8 @@
         <div class="col-sm-8 col-md-6 bg-white p-3">
           <h1 class= "mb-3 text-center">Add to <%= @list.name %></h1>
           <%= simple_form_for [@list, @bookmark] do |f| %>
+            <%= f.association :movie, as: :select, input_html: { class: "select2" } %>
             <%= f.input :comment %>
-            <%= f.association :movie %>
             <%= f.button :submit, "Add to list", class: "btn-primary" %>
           <% end %>
         </div>
@@ -52,4 +52,34 @@
   <div class="my-5 text-center">
     <%= link_to "Back to lists", root_path, { class: "btn btn-primary"} %>
   </div>
+  <hr>
+  <div class="reviews d-flex flex-wrap justify-content-between mt-5">
+    <div class="review-list pr-3">
+      <h3 class="mb-3">Reviews</h3>
+      <% @list.reviews.reverse.each do |review| %>
+        <div class="stars d-flex align-items-center mb-1">
+          <div class="stars-fontawesome">
+            <% review.rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </div>
+          <div class="timestamp pl-3">
+            <p class="m-0"><em>posted <%= ((Time.now - review.created_at) / 60).floor %> minutes ago</em></p>
+          </div>
+        </div>
+        <p id="review-<%= review.id %>"><%= review.content %></p>
+        <hr>
+      <% end %>
+    </div>
+    <div class="review-form">
+      <div class="bg-white p-3">
+        <h4 class= "mb-3">Add your review</h4>
+          <%= simple_form_for([@list, @review], remote: true) do |f| %>
+            <%= f.input :content, label: "Comment"%>
+            <%= f.input :rating, collection: 1..5, as: :select, input_html: { id: "star" }  %>
+            <%= f.button :submit, class: "btn-flat" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
 </div>

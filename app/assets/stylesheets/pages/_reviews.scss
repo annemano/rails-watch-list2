@@ -1,0 +1,16 @@
+.review-list {
+  width: 50%;
+}
+
+.review-form {
+  width: 50%;
+}
+
+@media (max-width: 800px) {
+  .review-list {
+    width: 100%;
+  }
+  .review-form {
+    width: 100%;
+  }
+}
